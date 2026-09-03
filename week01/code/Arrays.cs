@@ -1,3 +1,5 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
+
 public static class Arrays
 {
     /// <summary>
@@ -12,8 +14,17 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        
+        // Create an array with the length
+        double[] array = new double[length];
 
-        return []; // replace this return statement with your own
+        // Loop through the array and fill it with multiples of the given number
+        for (int i = 0; i < length; i++)
+        {
+            array[i] = number * (i + 1);
+        }
+        return array;
+        // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +40,12 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // 1. Copy the final 'amount' items using GetRange.
+        List<int> endingItems = data.GetRange(data.Count - amount, amount);
+          // 2. Remove those items from the end of the original list.
+        data.RemoveRange(data.Count - amount, amount);
+         // 3. Insert the copied items at the beginning of the original list.
+        data.InsertRange(0, endingItems);
     }
 }
