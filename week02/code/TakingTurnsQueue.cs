@@ -20,7 +20,7 @@ public class TakingTurnsQueue
     /// <param name="turns">Number of turns remaining</param>
     public void AddPerson(string name, int turns)
     {
-        var person = new Person(name, turns);
+        Person person = new Person(name, turns);
         _people.Enqueue(person);
     }
 
@@ -45,7 +45,10 @@ public class TakingTurnsQueue
                 person.Turns -= 1;
                 _people.Enqueue(person);
             }
-
+            else if (person.Turns <= 0)
+            {
+                _people.Enqueue(person);
+            }
             return person;
         }
     }
