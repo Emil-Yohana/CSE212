@@ -5,6 +5,11 @@
             if (item is '(' or '[' or '{') {
                 stack.Push(item);
             }
+            //(a == 3 or (b == 5 and c == 6))
+            //(students]i].Grade > 80 and students[i].Grade < 90)
+            //(
+            //(robot[id + 1].Execute(.Pass() || (!robot[id * (2 + i)].Alive && stormy) || (robot[id - 1].Alive && lavaFlowing))
+            //(
             else if (item is ')') {
                 if (stack.Count == 0 || stack.Pop() != '(')
                     return false;

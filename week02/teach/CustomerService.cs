@@ -10,17 +10,32 @@ public class CustomerService {
 
         // Test Cases
 
-        // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Test 1. Test that the default Customer Service Queue is created with a max size of 10 when the input max size is less than or equal to 0.
+        // Scenario: Create a new Customer Service Queue with the input is less than or equal to 0.
+        // Expected Result: The Customer service queue is created with a max size of 10.
         Console.WriteLine("Test 1");
 
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
 
+        var cs = new CustomerService(0);
+        if (cs._maxSize != 10)
+            throw new InvalidOperationException("Default max size should be 10 when input is <= 0");
+        else
+            Console.WriteLine("Default max size is correct when input is 0.");
+
+        var cs2 = new CustomerService(-1);
+        if (cs2._maxSize != 10)
+            throw new InvalidOperationException("Default max size should be 10 when input is <= 0");
+        else
+            Console.WriteLine("Default max size is correct when input is negative.");
+
+        Console.WriteLine("=================");
+
         // Test 2
-        // Scenario: 
+        // Scenario: Ensure that the AddNewCustomer method correctly enqueues a new customer.
+        
         // Expected Result: 
         Console.WriteLine("Test 2");
 
