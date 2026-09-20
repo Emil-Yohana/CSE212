@@ -87,7 +87,7 @@ public static class SetsAndMaps
     /// </summary>
     public static bool IsAnagram(string word1, string word2)
     {
-        // TODO Problem 3 - ADD YOUR CODE HERE
+        var dict = new Dictionary<char, int>();
         return false;
     }
 
